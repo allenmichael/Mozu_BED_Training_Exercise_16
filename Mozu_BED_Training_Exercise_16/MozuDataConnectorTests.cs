@@ -34,7 +34,7 @@ namespace Mozu_BED_Training_Exercise_16
             var customerSegmentResouce = new Mozu.Api.Resources.Commerce.Customer.CustomerSegmentResource(_apiContext);
             var customerAccountResource = new Mozu.Api.Resources.Commerce.Customer.CustomerAccountResource(_apiContext);
 
-            var discount = (discountResource.GetDiscountsAsync(filter: "Content.Name eq 'Waterbottle BOGO'").Result).Items[0];
+            var discount = (discountResource.GetDiscountsAsync(filter: "Content.Name eq '10% Off Scarves'").Result).Items[0];
             
             var customerSegment = (customerSegmentResouce.GetSegmentsAsync(filter:"Name eq 'High Volume Customer'").Result).Items[0];
             var segmentToAdd = new Mozu.Api.Contracts.ProductAdmin.CustomerSegment()
@@ -50,7 +50,7 @@ namespace Mozu_BED_Training_Exercise_16
 
             var customerAccountIds = new List<int>();
 
-            var customerAccount = (customerAccountResource.GetAccountsAsync(filter:"FirstName eq 'David'").Result).Items[0];
+            var customerAccount = (customerAccountResource.GetAccountsAsync(filter:"FirstName eq 'Malcolm'").Result).Items[0];
 
             customerAccountIds.Add(customerAccount.Id);
 
